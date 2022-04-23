@@ -1,50 +1,60 @@
 :root {
-  --gray: hsl(0, 0%, 64%);
-  --white: hsl(0, 0%, 98%);
-  --black: hsl(0, 0%, 8%);
-  --dark-gray: rgb(35, 35, 35);
+  --gray: #a3a3a3;
+  --white: #fafafa;
+  --black: #141414;
+  --dark-gray: #696969;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .dark {
-  --white: rgb(63, 17, 128);
+  --white: #333;
   --black: #fff;
   --gray: rgb(227, 227, 227);
-  --dark-gray: rgb(227, 227, 227);
+  --dark-gray: rgb(201, 201, 201);
 }
 
 body {
   min-height: 100vh;
-  background-color: var(--white);
   font-family: "Epilogue", sans-serif;
+  background-color: var(--white);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main {
   width: min(100%, 1400px);
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(rgba(81, 31, 207, 0.736), rgba(18, 16, 16, 0.561)),
-    url(../assets/bg-black.webp);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .main__header {
+  width: min(100%, 1400px);
   position: relative;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
   z-index: 1000;
+  margin: 0 auto;
 }
 
 .header__logo {
   padding-top: 5px;
+}
+
+.header__ctas {
+  display: none;
 }
 
 .header__btns {
@@ -72,11 +82,18 @@ body {
 
 .main__hero {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 1rem 0;
 }
 
 .hero__img {
-  width: min(100%, 700px);
+  width: min(100%, 375px);
+  margin: 0 auto;
+}
+
+.hero__img--desktop {
+  display: none;
 }
 
 .hero__introduction {
@@ -89,12 +106,12 @@ body {
 
 .hero__title {
   font-weight: 700;
-  font-size: 2.2rem;
-  color: var(--white);
+  font-size: 2.1rem;
+  color: var(--black);
 }
 
 .hero__paragraph {
-  color: var(--gray);
+  color: var(--dark-gray);
   line-height: 1.5;
   font-weight: 500;
 }
@@ -102,12 +119,22 @@ body {
 .hero__cta {
   width: min(80%, 130px);
   margin: 0 auto;
-  background-color: var(--white);
-  border-radius: 15px;
+  background-color: var(--black);
   padding: 14px 19px;
-  color: var(--black);
-  text-decoration: none;
+  color: var(--white);
+  border-radius: 15px;
   font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  outline: 2px solid black;
+  transition: background-color 0.7s;
+}
+
+.hero__cta:hover {
+  outline: 2px solid var(--black);
+  background-color: var(--white);
+  color: var(--black);
+  transition: background-color 0.7s;
 }
 
 .hero__brands {
@@ -124,6 +151,7 @@ body {
 .navigation {
   position: absolute;
   top: 0;
+  bottom: 0;
   right: -100%;
   width: 65%;
   max-width: 240px;
@@ -218,4 +246,102 @@ body {
 
 .expanded__items.company {
   padding-left: 1.8rem;
+}
+
+@media (min-width: 750px) {
+  .main {
+    position: relative;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .main__header {
+    position: absolute;
+    padding: 1.5rem;
+  }
+
+  .header__ctas {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    font-size: 14px;
+  }
+
+  .header__cta {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--dark-gray);
+  }
+
+  .header__cta--register {
+    width: 6.5rem;
+    height: 2.625rem;
+    border: 0.125rem solid var(--dark-gray);
+    border-radius: 0.875rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.875rem;
+    transition: 0.3s;
+  }
+
+  .header__cta:hover {
+    color: var(--black);
+    transition: 0.3s;
+  }
+
+  .header__cta--register:hover {
+    border: 0.125rem solid var(--black);
+    transition: 0.3s;
+  }
+
+  .header__btns {
+    display: none;
+  }
+
+  .hero__img {
+    display: none;
+  }
+
+  .hero__img--desktop {
+    display: inline-block;
+    max-width: 480px;
+    max-height: 640px;
+    flex-basis: 50%;
+  }
+
+  .main__hero {
+    flex-basis: 50%;
+    gap: 3rem;
+    padding: 0 0.9rem 1rem 7rem;
+  }
+
+  .hero__introduction {
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .hero__title {
+    font-size: 5rem;
+  }
+
+  .hero__paragraph {
+    padding: 1rem 4rem 1rem 0;
+    font-size: 18px;
+  }
+
+  .hero__cta {
+    width: 165px;
+    padding: 1.05rem 1.3rem;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .hero__brand {
+    width: initial;
+  }
+
+  .navigation {
+    display: none;
+  }
 }

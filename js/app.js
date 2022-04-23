@@ -18,7 +18,6 @@ menuToggle.onclick = () => {
   navigation.classList.toggle('active')
 }
 
-
 featureBtn.addEventListener('click', () => {
   featureExpanded.classList.toggle('d-none')
 })
