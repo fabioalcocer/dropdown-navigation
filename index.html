@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <main class="main">
+      <header class="main__header">
+        <img src="./assets/logo.svg" alt="" class="header__logo" />
+        <div class="header__btns">
+          <img src="./assets/icon-menu.svg" alt="" class="header__menu" />
+          <img
+            src="./assets/icon-close-menu.svg"
+            alt=""
+            class="header__menu header__menu--close"
+          />
+        </div>
+      </header>
+
+      <section class="main__hero">
+        <img src="./assets/image-hero-mobile.png" alt="" class="hero__img" />
+
+        <div class="hero__introduction">
+          <h2 class="hero__title">Make remote work</h2>
+          <p class="hero__paragraph">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <a href="#" class="hero__cta">Learn more</a>
+        </div>
+
+        <div class="hero__brands">
+          <img src="./assets/client-databiz.svg" alt="" class="hero__brand" />
+          <img
+            src="./assets/client-audiophile.svg"
+            alt=""
+            class="hero__brand"
+          />
+          <img src="./assets/client-meet.svg" alt="" class="hero__brand" />
+          <img src="./assets/client-maker.svg" alt="" class="hero__brand" />
+        </div>
+      </section>
+
+      <ul class="navigation">
+        <li class="expanded features d-none">
+          <div class="expanded-btn features">
+            <a href="#">Features</a>
+            <img src="./assets/icon-arrow-down.svg" class="arrow" />
+          </div>
+
+          <div class="expanded__items features">
+            <a href="#" class="expanded__item features">
+              <img src="./assets/icon-todo.svg" />Todo List
+            </a>
+            <a href="#" class="expanded__item features">
+              <img src="./assets/icon-calendar.svg" />Calendar
+            </a>
+            <a href="#" class="expanded__item features">
+              <img src="./assets/icon-reminders.svg" />Reminders
+            </a>
+            <a href="#" class="expanded__item features">
+              <img src="./assets/icon-planning.svg" />Planining
+            </a>
+          </div>
+        </li>
+
+        <li class="expanded company d-none">
+          <div class="expanded-btn company">
+            <a href="#">Company</a>
+            <img src="./assets/icon-arrow-down.svg" class="arrow" />
+          </div>
+
+          <div class="expanded__items company">
+            <a href="#" class="expanded__item company">History</a>
+            <a href="#" class="expanded__item company">Our Team</a>
+            <a href="#" class="expanded__item company">Blog</a>
+          </div>
+        </li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </main>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
